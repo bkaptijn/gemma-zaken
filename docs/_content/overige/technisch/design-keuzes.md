@@ -593,3 +593,24 @@ in te richten.
 
 De volledige architectuur is uitgewerk in
 [de documentatie](../architectuur/authenticatie-autorisatie)
+
+## Bestandsnamen
+
+In RGBZ worden bestandsnamen als gegevensgroep `bestandsnaam` + `extensie`
+gespecifieerd. We kiezen ervoor om in de API deze te combineren in 1 veld
+`bestandsnaam`. Dit is in lijn met bestaande APIs in de industrie en ook
+besturingssystemen slaan de twee als 1 entiteit op.
+
+## Fysieke integriteit (TMLO)
+
+In het RGBZ zijn attributen i.v.m. archiveren opgenomen, afkomstig uit TMLO.
+Deze zijn te vaag gespecifieerd om er echt (geautomatiseerd) iets mee te kunnen
+doen. Daarom is een initiële lijst van gangbare checksum-algoritmes opgenomen
+als enum. Als er een landelijke referentielijst komt, dan zal de enum in een
+latere versie daarnaar verwijzen.
+
+De kwestie is gedetailleerd beschreven in de landelijke
+[KP-Api](https://github.com/Geonovum/KP-APIs/issues/20) repository.
+
+Een statische lijst is makkelijk aan versionering te koppelen, wat het voor
+partijen heel duidelijk maakt welke algoritmes ze moeten ondersteunen.
